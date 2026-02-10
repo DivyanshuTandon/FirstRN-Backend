@@ -1,3 +1,5 @@
+import { generateAccessToken } from '../utils/jwt';
+
 type LoginResponse = {
   accessToken: string;
   user: {
@@ -11,7 +13,6 @@ export const loginService = async (
   email: string,
   password: string
 ): Promise<LoginResponse> => {
-  // Temporary hardcoded user (will be DB later)
   const fakeUser = {
     id: 'user_1',
     name: 'Divyanshu Tandon',
@@ -43,8 +44,13 @@ export const loginService = async (
     };
   }
 
+  const accessToken = generateAccessToken({
+    userId: fakeUser.id,
+    email: fakeUser.email,
+  });
+
   return {
-    accessToken: 'temp_access_token',
+    accessToken,
     user: {
       id: fakeUser.id,
       name: fakeUser.name,
