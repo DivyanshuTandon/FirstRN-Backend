@@ -15,9 +15,9 @@ export const loginService = async (
 ): Promise<LoginResponse> => {
   const fakeUser = {
     id: 'user_1',
-    name: 'Divyanshu Tandon',
-    email: 'test@example.com',
-    password: 'password123',
+    name: 'Divyanshu',
+    email: 'divyanshu@gmail.com',
+    password: '121212',
   };
 
   if (!email || !password) {
