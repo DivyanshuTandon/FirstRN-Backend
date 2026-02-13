@@ -8,15 +8,19 @@ export const swaggerSpec = swaggerJSDoc({
       version: '1.0.0',
       description: 'Authentication API documentation',
     },
-    servers: [
+
+    tags: [
       {
-        url: 'http://localhost:4000',
+        name: 'Authentication',
+        // description: 'Auth related APIs',
       },
     ],
+
     paths: {
       '/auth/login': {
         post: {
-          summary: 'User login',
+          tags: ['Authentication'], // 👈 Add this
+          // summary: 'User login',
           requestBody: {
             required: true,
             content: {

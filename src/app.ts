@@ -12,7 +12,7 @@ app.use(express.json());
 
 app.use('/auth', authRoutes);
 
-app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+app.use('/api', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 // error handler must be last
 app.use(errorHandler);
